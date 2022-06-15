@@ -131,7 +131,11 @@ The ExpectedFormat property may be set to one of the following:
 <!-- SECURITY -->
 ## Security
 
-As mdzWebRequest_Proxy.php will forward web requests
+As mdzWebRequest_Proxy.php will forward web requests it opens up 'relay' type security issues.  It currently has no facility to deny usage based on client IP or any other criteria.
+
+It should therefore not be installed on a publicly addressable server.
+
+It can though be hosted on the same server as the public site, but under a different web site.  The MyDocz site hosts mdzWebRequest.php on a separate site under the domain name of mdzwr.mydocz.com.  This is configured within IIS to only allow connection from IP addresses within the local MyDocz network, so for example it is adressable from the www.mydocz.com/mdzWebRequest_Test.aspx page.  The mdzwr.mydocz.com domain is also configured to only allow 2 requests per 10 seconds as the mdzWebRequest_Test.aspx page is itself liable to be used as a 'relay'.
 
 
 <!-- LICENSE -->
