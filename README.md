@@ -148,6 +148,20 @@ For proxy requests, exceptions should be less likely as they are trapped and ret
 A list of curl ErrNo codes can be found at https://curl.se/libcurl/c/libcurl-errors.html
 
 When exceptions are raised within the mdzWebRequest class, even if they are not passed on as exception but return 14011 and 14013 error codes, the mdzSys.ErrorLog() function is called.  This can be configured to email details of the error raised and log them to a file.  These are configured within the <smpt> and <errorlog> sections of the mdzSys.config file and documented in the mdzSys.cs source.
+  
+### Source Files
+
+The files comprising mdzWebRequest are as follows:
+  
+| Filename | Description |
+| --- | --- |
+| APP_CODE/mdzWebRequest.cs | The mdzWebRequest class written in c# |
+| APP_CODE/mdzSys.cs | A static singleton class with various helper functions used by MyDocz code including mdzWebServices.cs |
+| mdzWebRequest_Test.aspx | A program to test mdzWebRequest as used on the MyDocz web site |
+| mdzWebRequest_Test.xslt | The mdzWebRequest_Test pages HTML as a XSLT stylesheet |
+| mdzWebRequest_Test.css | CSS stylesheet used by mdzWebRequest_Test pages |
+| mdzWebRequest_Test.js | Javascript file used by mdzWebRequest_Test pages |
+| mdzSys.config | Configuration file for mdzSys functions (see Error Handling above) |
 
 <!-- SECURITY -->
 ## Security
