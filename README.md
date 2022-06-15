@@ -147,7 +147,7 @@ For proxy requests, exceptions should be less likely as they are trapped and ret
 
 A list of curl ErrNo codes can be found at https://curl.se/libcurl/c/libcurl-errors.html
 
-When exceptions are raised within the mdzWebRequest class, even if they are not passed on as exception but return 14011 and 14013 error codes, the mdzSys.ErrorLog function is called.  This can be configured to email details of the error raised and log them to a file.  These are configured within the <smpt> and <errorlog> sections of the mdzSys.config file and documented in the mdzSys.cs source.
+When exceptions are raised within the mdzWebRequest class, even if they are not passed on as exception but return 14011 and 14013 error codes, the mdzSys.ErrorLog() function is called.  This can be configured to email details of the error raised and log them to a file.  These are configured within the <smpt> and <errorlog> sections of the mdzSys.config file and documented in the mdzSys.cs source.
 
 <!-- SECURITY -->
 ## Security
