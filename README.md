@@ -91,7 +91,7 @@ To make a web request using mdzWebRequest perform the following:
 | Property | DataType | Description |
 | --- | --- | --- |
 | URL | string | The URL for the service you wish to request |
-| Method | string | The request method, eg GET, POST, PUT. |
+| Method | string | The request method, must be "GET", "POST" or "PUT". |
 | Content | string | Any data to post |
 | ContentType | string | Mime type for data to be posted, fopr example "application/x-www-form-urlencoded", "text/xml; encoding='utf-8'" |
 | UserName | string | If authentification is required, the UserName |
@@ -117,8 +117,8 @@ The ExpectedFormat property may be set to one of the following:
 
 | Property | DataType | Description |
 | --- | --- | --- |
-| ErrNo | int | An error code that may be from mdzWebTRequest or culr if using the proxy, see below |
-| ErrMsg | string | An error code that may be from mdzWebTRequest or culr if using the proxy, see below |
+| ErrNo | int | An error code that may be from mdzWebRequest or culr if using the proxy, see below |
+| ErrMsg | string | An error code that may be from mdzWebRequest or culr if using the proxy, see below |
 | ResponseCode | HttpStatusCode | The response status code returned by the server - see [https://docs.microsoft.com/en-us/dotnet/api/system.net.httpstatuscode?view](https://docs.microsoft.com/en-us/dotnet/api/system.net.httpstatuscode) |
 | ResponseType | string | The response Mine Content Type.  Any parameters following the Content type in the header supplied by the server are stripped, for example "text/html; charset=utf-8" will return just "text/html" |
 | ResponseTypeParams | string | Any parameters following the Content Type, for example "text/html; charset=utf-8" will return "charset=utf-8" |
@@ -126,6 +126,26 @@ The ExpectedFormat property may be set to one of the following:
 | Response | string | The response data returned by the server, if the IsBinary property is False |
 | ResponseBinary | byte[] | The response data returned by the server, if the IsBinary property is True |
 
+### Error Handling
+
+If the ErrNo property has a value of 0 after Submit() has been envoked, the requested was processed successfully.
+
+This does not necessarily mean that the resource requested performed correctly, the ResponseCode property should also be checked for OK/200 and any other logic associated with the request performed on the Response(/Binary) data.
+
+For direct (non-proxy) requests, other than the first 2 errors listed below, ErrNo will always return 0.  Any exceptions are thrown by the httpWebRequest wrapper, these are thrown back to the calling program.
+
+For proxy requests, exceptions should be less likely as they are trapped and return the 14011 and 14013 codes listed below.  Although this may not give such high detail on the actual error, it highlights what part of the process failed and the exact message is still returned.  If an error was returned by the curl request to the server, this is returned in ErrNo.
+
+| ErrNo | Description |
+| --- | --- |
+| 14001 | The URL property is blank |
+| 14002 | The Method property is not "GET", "POST" or "PUT" |
+| 14003 | The UseProxy property is True, but ProxyURL property is blank |
+| 14011 | A proxy request was made, but an error was thrown communicating with the proxy, ErrMsg will include a description |
+| 14012 | The ResponseCode received from the proxy request was not 200 indicating failure, ErrMsg will include the ResponseCode  |
+| 14013 | An error occurred extracting the request response from the proxy response, ErrMsg will include a description |
+
+A list of curl ErrNo codes can be found at https://curl.se/libcurl/c/libcurl-errors.html
 
 
 <!-- SECURITY -->
