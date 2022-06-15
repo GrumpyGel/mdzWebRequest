@@ -1,5 +1,5 @@
 # mdzWebRequest
-Wrapper for httpWebRequest allowing modern ciphers
+Wrapper for httpWebRequest allowing modern ciphers on versions of Windows Server prior to 2022
 
 
 [![Contributors][contributors-shield]][contributors-url]
