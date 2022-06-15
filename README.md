@@ -1,5 +1,5 @@
 # mdzWebRequest
-Replacement or Wrapper for .Net httpWebRequest allowing modern ciphers on versions of Windows Server prior to 2022
+Alternative to httpWebRequest allowing modern ciphers on versions of Windows Server prior to 2022
 
 
 [![Contributors][contributors-shield]][contributors-url]
@@ -21,7 +21,7 @@ Replacement or Wrapper for .Net httpWebRequest allowing modern ciphers on versio
   <h3 align="center">mdzWebRequest</h3>
 
   <p align="center">
-    Replacement or Wrapper for .Net httpWebRequest allowing modern ciphers on versions of Windows Server prior to 2022
+    Alternative to httpWebRequest allowing modern ciphers on versions of Windows Server prior to 2022
     <br />
     <br />
     <br />
