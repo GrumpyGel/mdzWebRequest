@@ -132,7 +132,7 @@ If the ErrNo property has a value of 0 after Submit() has been envoked, the requ
 
 This does not necessarily mean that the resource requested performed correctly, the ResponseCode property should also be checked for OK/200 and any other logic associated with the request performed on the Response(/Binary) data.
 
-For direct (non-proxy) requests, other than the first 2 errors listed below, ErrNo will always return 0.  Any exceptions are thrown by the httpWebRequest wrapper, these are thrown back to the calling program.
+For direct (non-proxy) requests, other than the first 2 errors listed below, ErrNo will always return 0.  If an exception is thrown by the httpWebRequest wrapper, these are thrown back to the calling program.
 
 For proxy requests, exceptions should be less likely as they are trapped and return the 14011 and 14013 codes listed below.  Although this may not give such high detail on the actual error, it highlights what part of the process failed and the exact message is still returned.  If an error was returned by the curl request to the server, this is returned in ErrNo.
 
