@@ -42,6 +42,7 @@ Wrapper for httpWebRequest allowing modern ciphers
     <li><a href="#about-the-project">About The Project</a></li>
     <li><a href="#installation--usage">Installation &amp; Usage</a></li>
     <li><a href="#documentation">Documentation</a></li>
+    <li><a href="#documentation">Security</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgements">Acknowledgements</a></li>
@@ -53,7 +54,7 @@ Wrapper for httpWebRequest allowing modern ciphers
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-A 3rd Party that a site I manage integrates to updated their SSL connectivity and in doing so restricted the number of allowable ciphers for clients to connect with to 3.
+A site I manage integrates to a 3rd Party that updated their SSL connectivity and in doing so restricted the number of allowable ciphers for clients to connect with to 3.
 
 The managed site operates in a .Net environment and its httpWebRequest classes use the underlying operating system's https commmunication facilities. The 3 ciphers were not supported on anything other than Windows Server 2022 and we were not in a position to migrate to this platform.
 
@@ -71,9 +72,6 @@ Clone the repo
    ```sh
    git clone https://github.com/GrumpyGel/mdzWebRequest.git
    ```
-
-
-
 
 
 <!-- DOCUMENTATION -->
@@ -130,6 +128,10 @@ The ExpectedFormat property may be set to one of the following:
 
 
 
+<!-- SECURITY -->
+## Security
+
+As mdzWebRequest_Proxy.php will forward web requests
 
 
 <!-- LICENSE -->
