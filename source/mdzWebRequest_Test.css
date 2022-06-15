@@ -1,0 +1,46 @@
+
+body, table                          { font-family: Helvetica Neue,Helvetica,Arial,sans-serif; font-size: 12px; }
+thead td                             { padding: 2px 4px; vertical-align: bottom; font-weight: bold; }
+tbody td                             { padding: 2px 4px; vertical-align: top; }
+.HomeLink                            { float: right; padding: 0 20px 0 0; }
+
+/* Request Page */
+
+.UserInput                           { max-width:700px; }
+.UserInput>div                       { display: flex; flex-flow: row wrap; padding: 5px; }
+.UserInput>div>div                   { flex: 0 0 150px; }
+.UserInput>div>div:nth-child(2)      { flex: 1 0 100px; }
+.UserInput input[type=text]          { width: calc(100% - 10px) }
+.UserInput select                    { width: calc(100% - 10px) }
+
+.NoProxy   .ForProxy   input         { visibility: hidden; }
+.NoContent .ForContent input         { visibility: hidden; }
+.UserInput>div.gap                   { padding-top:10px; }
+
+/* Response Page */
+
+.Properties                          { width: 700px; max-width:100%; }
+.Properties>div                      { background-color: #e0e0e0; padding: 15px; border-radius: 10px; }
+.Property                            { display: flex; flex-flow: row wrap; padding: 5px;}
+.Property>div                        { flex: 0 0 150px; padding: 4px 0px; }
+.Property>div:nth-child(2)           { flex: 1 0 150px;  padding: 4px 8px; background-color: #ffffff; border:1px solid #000000; overflow: hidden; }
+
+.xmlElement                          { padding-left: 10px; border-top: 1px solid #e0e0e0; }
+.xmlDetails                          { display: flex; flex-flow: row wrap; }
+.xmlAttribute                        { display: flex; flex-flow: row wrap; padding-left: 10px;}
+.xmlNav                              { flex: 0 0 20px; }
+.xmlTag                              { flex: 1 0 100px; }
+.xmlText                             { flex: 0 0 calc(100vw - 205px); }
+
+.xmlClosed>.xmlDetails>.xmlNav       { background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='%23909090' width='10' height='10'><path d='M0 0 L8 0 L4 7 Z'/></svg>") no-repeat center 5px; }
+.xmlOpen>.xmlDetails>.xmlNav         { background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='%23909090' width='10' height='10'><path d='M0 0 L0 8 L7 4 Z'/></svg>") no-repeat center 5px; }
+.xmlLeaf   .xmlNav                   { background-image:none; }
+
+.xmlClosed>.xmlDetails>.xmlNav:hover { cursor:pointer; background-color:beige; border-radius: 10px;}
+.xmlOpen>.xmlDetails>.xmlNav:hover   { cursor:pointer; background-color:beige; border-radius: 10px;}
+
+.xmlClosed .xmlElement               { display:none; }
+
+#Container img                       { max-width: 100%; }
+#Container pre                       { max-width: 100%; max-height: 90vh; overflow: auto; font-family: monospace; font-size: 12px; border: 1px solid #000000; }
+#BinaryContainer                     { width: 950px; max-width: 100%; max-height: 90vh; overflow: auto; font-family: monospace; font-size: 12px; }
