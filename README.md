@@ -21,7 +21,7 @@ Wrapper for httpWebRequest allowing modern ciphers
   <h3 align="center">mdzWebRequest</h3>
 
   <p align="center">
-    Wrapper for httpWebRequest allowing modern ciphers
+    Wrapper for httpWebRequest allowing modern ciphers on versions of Windows Server prior to 2022
     <br />
     <br />
     <br />
@@ -111,9 +111,9 @@ The ExpectedFormat property may be set to one of the following:
 
 | Value | Description |
 | --- | --- |
-| Text | If the response will be returned in the Response property as a string, onlt use when safe to do so |
-| Binary | If the response will be returned in the ResponseBinary property as a byte[] |
-| Detect | ResponseBinary property as a byte[] by default, but will be returned in the Response property as a string if the ResponseType is one of the following: "text/*", "application/xhtml+xml", "application/xml" or "application/json" |
+| Text | The response is expected to be Text and will be returned in the Response property as a string, only use when safe to do so |
+| Binary | The response is expected to be Binary and will be returned in the ResponseBinary property as a byte[] |
+| Detect (Default) | When ResponseType is "text/*", "application/xhtml+xml", "application/xml" or "application/json" it will be processed as Text, otherwise it will be processed as Binary |
 
 ### Response Properties
 
