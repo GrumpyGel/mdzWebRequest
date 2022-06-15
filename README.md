@@ -54,7 +54,7 @@ Alternative to httpWebRequest allowing modern ciphers on versions of Windows Ser
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-A site I manage integrates to a 3rd Party that updated their SSL connectivity and in doing so restricted the number of allowable ciphers for clients to connect with to 3.  They are as follows:
+A site I manage integrates to a 3rd Party that updated their SSL connectivity and in doing so restricted the number of allowable ciphers for clients to connect with to 3 (for TLS 1.2).  They are as follows:
 
 TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256<br />
 TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384<br />
