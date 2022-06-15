@@ -157,6 +157,7 @@ The files comprising mdzWebRequest are as follows:
 | --- | --- |
 | APP_CODE/mdzWebRequest.cs | The mdzWebRequest class written in c# |
 | APP_CODE/mdzSys.cs | A static singleton class with various helper functions used by MyDocz code including mdzWebServices.cs |
+| mdzWebRequestProxy.php | The mdzWebRequest proxy PHP program |
 | mdzWebRequest_Test.aspx | A program to test mdzWebRequest as used on the MyDocz web site |
 | mdzWebRequest_Test.xslt | The mdzWebRequest_Test pages HTML as a XSLT stylesheet |
 | mdzWebRequest_Test.css | CSS stylesheet used by mdzWebRequest_Test pages |
