@@ -145,6 +145,7 @@ For proxy requests, exceptions should be less likely as they are trapped and ret
 | 14001 | The URL property is blank |
 | 14002 | The Method property is not "GET", "POST" or "PUT" |
 | 14003 | The UseProxy property is True, but ProxyURL property is blank |
+| 14004 | The request was not allowed, it failed IP or Host validation criteria, see Configuration below |
 | 14011 | A proxy request was made, but an error was thrown communicating with the proxy, ErrMsg will include a description |
 | 14012 | The ResponseCode received from the proxy request was not 200 indicating failure, ErrMsg will include the ResponseCode  |
 | 14013 | An error occurred extracting the request response from the proxy response, ErrMsg will include a description |
@@ -153,6 +154,19 @@ A list of curl ErrNo codes can be found at https://curl.se/libcurl/c/libcurl-err
 
 When exceptions are raised within the mdzWebRequest class, even if they are not passed on as exception but return 14011 and 14013 error codes, the mdzSys.ErrorLog() function is called.  This can be configured to email details of the error raised and log them to a file.  These are configured within the <smpt> and <errorlog> sections of the mdzSys.config file and documented in the mdzSys.cs source.
   
+### Configuration
+
+mdzWebRequest allows for validation of allowable client IP addresses (ie browser or service client IP) and Host server names in the URL property.  The following settings are available:
+
+| Setting | Description |
+| --- | --- |
+| IP_AutoAllow | A 'True' value means all client IP addresses are by default allowed, a 'False' value means no IP addresses are by default allowed |
+| Host_AutoAllow | A 'True' value means all hosts are by default allowed, a 'False' value means no hosts are by default allowed |
+| ValidationLog | If a log is required of validation failures, the log filename should be set here.  If the name is prefixed by a '~' character it will be created in the site directory.  If empty, no log is produced. |
+| Exception | Exceptions to the IP_AutoAllow and Host_AutoAllow settings can each be made as a separate Exception.  The Exception should have a "Tye" attribute of "IP" or "Host" and a "Value" attribute of the IP address/Host name that is the exception. |
+  
+
+
 ### Source Files
 
 The files comprising mdzWebRequest are as follows:
