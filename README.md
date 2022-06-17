@@ -195,7 +195,9 @@ The files comprising mdzWebRequest are as follows:
 <!-- SECURITY -->
 ## Security
 
-As mdzWebRequest_Proxy.php will forward web requests it opens up 'relay' type security issues.  It currently has no facility to deny usage based on client IP or any other criteria.
+ Although the mdzWebRequest class has configuration to filter IP addresses and hosts being connected to, the proxy component does not.
+ 
+ As mdzWebRequest_Proxy.php will forward all web requests it receives, it opens up 'relay' type security issues.  It currently has no facility to deny usage based on client IP or any other criteria.
 
 It should therefore not be installed on a publicly addressable server.
 
