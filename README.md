@@ -163,9 +163,19 @@ mdzWebRequest allows for validation of allowable client IP addresses (ie browser
 | IP_AutoAllow | A 'True' value means all client IP addresses are by default allowed, a 'False' value means no IP addresses are by default allowed |
 | Host_AutoAllow | A 'True' value means all hosts are by default allowed, a 'False' value means no hosts are by default allowed |
 | ValidationLog | If a log is required of validation failures, the log filename should be set here.  If the name is prefixed by a '~' character it will be created in the site directory.  If empty, no log is produced. |
-| Exception | Exceptions to the IP_AutoAllow and Host_AutoAllow settings can each be made as a separate Exception.  The Exception should have a "Tye" attribute of "IP" or "Host" and a "Value" attribute of the IP address/Host name that is the exception. |
+| Exception | Exceptions to the IP_AutoAllow and Host_AutoAllow settings can each be made as a separate Exception.  The Exception should have a "Tye" attribute of "IP" or "Host" and a "Value" attribute of the IP address/Host name that is the exception.  IP address values can be IPV4 or IPV6 and can optionally include CIDR notation for subnet mask. |
   
-
+Configuration settings are made in the mdzWebRequest.config file which is in XML format.  The following example only allows client connection from 127.0.0.1 and 192.168.1.* IP addresses, only allows requests to be made to www.mydocz.com and will log validation failures in a file called 'mdzWebRequest.log':
+  
+```
+<mdzWebRequest IP_AutoAllow="False"
+               Host_AutoAllow="False"
+							 ValidationLog="~mdzWebRequest.log">
+	<Exception Type="IP" Value="127.0.0.1"/>
+	<Exception Type="IP" Value="192.168.1.1/24"/>
+	<Exception Type="Host" Value="www.mydocz.com"/>
+</mdzWebRequest>
+```  
 
 ### Source Files
 
