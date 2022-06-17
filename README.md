@@ -170,10 +170,10 @@ Configuration settings are made in the mdzWebRequest.config file which is in XML
 ```
 <mdzWebRequest IP_AutoAllow="False"
                Host_AutoAllow="False"
-							 ValidationLog="~mdzWebRequest.log">
-	<Exception Type="IP" Value="127.0.0.1"/>
-	<Exception Type="IP" Value="192.168.1.1/24"/>
-	<Exception Type="Host" Value="www.mydocz.com"/>
+               ValidationLog="~mdzWebRequest.log">
+    <Exception Type="IP"   Value="127.0.0.1"/>
+    <Exception Type="IP"   Value="192.168.1.1/24"/>
+    <Exception Type="Host" Value="www.mydocz.com"/>
 </mdzWebRequest>
 ```  
 
