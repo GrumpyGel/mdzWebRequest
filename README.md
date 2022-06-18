@@ -192,6 +192,7 @@ The files comprising mdzWebRequest are as follows:
 | mdzWebRequest_Test.xslt | The mdzWebRequest_Test pages HTML as a XSLT stylesheet |
 | mdzWebRequest_Test.css | CSS stylesheet used by mdzWebRequest_Test pages |
 | mdzWebRequest_Test.js | Javascript file used by mdzWebRequest_Test pages |
+| mdzWebRequest.config | Sample configuration file for mdzWebRequest (see Configuration above) |
 | mdzSys.config | Configuration file for mdzSys functions (see Error Handling above) |
 
 <!-- SECURITY -->
