@@ -227,7 +227,7 @@ Project Link: [https://github.com/GrumpyGel/mdzWebRequest](https://github.com/Gr
 ## Acknowledgements
 
 * [Best-README-Template](https://github.com/othneildrew/Best-README-Template)
-* [IP and subnet validation code adted from Christoph Sonntag's Stack Overflow thread response](https://stackoverflow.com/a/56461160)
+* [IP and subnet validation code adapted from Christoph Sonntag's Stack Overflow thread response](https://stackoverflow.com/a/56461160)
 
 
 
