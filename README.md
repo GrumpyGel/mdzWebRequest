@@ -145,7 +145,7 @@ For proxy requests, exceptions should be less likely as they are trapped and ret
 | 14001 | The URL property is blank |
 | 14002 | The Method property is not "GET", "POST" or "PUT" |
 | 14003 | The UseProxy property is True, but ProxyURL property is blank |
-| 14004 | The request was not allowed, it failed IP or Host validation criteria, see Configuration below |
+| 14004 | The request was not allowed, client IP or Host blocked , see Configuration below |
 | 14011 | A proxy request was made, but an error was thrown communicating with the proxy, ErrMsg will include a description |
 | 14012 | The ResponseCode received from the proxy request was not 200 indicating failure, ErrMsg will include the ResponseCode  |
 | 14013 | An error occurred extracting the request response from the proxy response, ErrMsg will include a description |
