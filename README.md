@@ -204,7 +204,9 @@ The files comprising mdzWebRequest are as follows:
 
 It should therefore not be installed on a publicly addressable server.
 
-It can though be hosted on the same server as the public site, but under a different web site.  The MyDocz site hosts mdzWebRequest.php on a separate site under the domain name of mdzwr.mydocz.com.  This is configured within IIS to only allow connection from IP addresses within the local MyDocz network, so for example it is adressable from the www.mydocz.com/mdzWebRequest_Test.aspx page.  The mdzwr.mydocz.com domain is also configured to only allow 2 requests per 10 seconds as the mdzWebRequest_Test.aspx page is itself liable to be used as a 'relay'.
+It can though be hosted on the same server as the public site, but under a different web site.  The MyDocz site hosts mdzWebRequest.php on a separate site under the domain name of mdzwr.mydocz.com.  Normally, this site would be configured so that it only allows connection from trusted IP addresses, for example IP addresses within the local network (or loopback) where mdzWebRequest is running and under the control of the application using it.
+
+On the MyDocz site though the www.mydocz.com/mdzWebRequest_Test.aspx test page operates, which itself could be abused as a relay.  So simply restricting access to mdzwr.mydocz.com from local IPs would be pointless.  Instead the mdzwr.mydocz.com domain is also configured to only allow 2 requests per 10 seconds.  This is fine to stop abuse, and no live applications use this domain, but would not be practical in a normal live environment.
 
 
 <!-- LICENSE -->
